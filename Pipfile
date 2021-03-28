@@ -7,6 +7,9 @@ name = "pypi"
 pytest = "*"
 djangorestframework = "*"
 black = "*"
+pytest-env = "*"
+pytest-cov = "*"
+pytest-django = "*"
 
 [dev-packages]
 
