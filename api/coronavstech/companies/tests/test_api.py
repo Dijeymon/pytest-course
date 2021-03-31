@@ -37,7 +37,9 @@ def test_create_existing_company_should_fail(client) -> None:
     Company.objects.create(name="Apple")
     response = client.post(path=companies_url, data={"name": "Apple"})
     assert response.status_code == 400
-    assert json.loads(response.content) == {"name": ["company with this name already exists."]}
+    assert json.loads(response.content) == {
+        "name": ["company with this name already exists."]
+    }
 
 
 def test_create_company_with_only_name_all_fields_should_be_default(client) -> None:
@@ -51,7 +53,9 @@ def test_create_company_with_only_name_all_fields_should_be_default(client) -> N
 
 
 def test_create_company_with_layoffs_status_should_succeed(client) -> None:
-    response = client.post(path=companies_url, data={"name": "test company name", "status": "Layoffs"})
+    response = client.post(
+        path=companies_url, data={"name": "test company name", "status": "Layoffs"}
+    )
     assert response.status_code == 201
     response_content = json.loads(response.content)
     assert response_content.get("status") == "Layoffs"
