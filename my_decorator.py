@@ -4,7 +4,7 @@ Decorator = Callable
 
 
 def get_list_of_kwargs_for_function(
-        identifiers: str, values: List[Tuple[int, int]]
+    identifiers: str, values: List[Tuple[int, int]]
 ) -> List[Dict[str, int]]:
     print(f"getting list kwargs for function,\n{identifiers=}, {values=}")
     parsed_identifiers = identifiers.split(",")
