@@ -8,7 +8,6 @@ def test_send_email_should_succeed(mailoutbox, settings) -> None:
     settings.EMAIL_BACKEND = "django.core.mail.backends.locmem.EmailBackend"
     assert len(mail.outbox) == 0
 
-    # Send message.
     mail.send_mail(
         subject="Test Subject here",
         message="Test Here is the message",
