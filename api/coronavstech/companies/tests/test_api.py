@@ -80,7 +80,7 @@ def test_should_be_skipped() -> None:
     assert 1 == 2
 
 
-# ---------------Learn about fixtures tests--------------
+# --------------Learn about fixtures tests--------------
 
 
 @pytest.mark.parametrize(
